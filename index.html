@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Нужно для нормального отображения на телефоне -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Смешные кейсы</title>
+
+  <!-- Подключаем стили -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Telegram Web App SDK.
+       Он нужен, чтобы приложение нормально открывалось внутри Telegram -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app">
+
+    <!-- Верхняя часть приложения -->
+    <header class="header">
+      <div>
+        <h1>Смешные кейсы</h1>
+        <p>Открывай кейсы и выбивай странные подарки</p>
+      </div>
+
+      <!-- Баланс пользователя -->
+      <div class="balance">
+        <span id="balance">1000</span>
+        <small>мем-коинов</small>
+      </div>
+    </header>
+
+    <!-- Выбор кейсов -->
+    <section class="cases">
+      <h2>Выбери кейс</h2>
+
+      <div class="case-list">
+        <button class="case-card active" data-case="cheap">
+          <span class="case-icon">📦</span>
+          <strong>Бомж-кейс</strong>
+          <small>Цена: 100</small>
+        </button>
+
+        <button class="case-card" data-case="funny">
+          <span class="case-icon">🎁</span>
+          <strong>Мем-кейс</strong>
+          <small>Цена: 250</small>
+        </button>
+
+        <button class="case-card" data-case="legendary">
+          <span class="case-icon">💎</span>
+          <strong>Легендарный кринж</strong>
+          <small>Цена: 500</small>
+        </button>
+      </div>
+    </section>
+
+    <!-- Рулетка -->
+    <section class="roulette-section">
+      <h2>Рулетка</h2>
+
+      <!-- Стрелка по центру показывает, что выпало -->
+      <div class="roulette-wrapper">
+        <div class="pointer"></div>
+
+        <!-- Сюда через JS будут добавляться подарки -->
+        <div id="roulette" class="roulette"></div>
+      </div>
+
+      <button id="openCaseBtn" class="open-btn">
+        Открыть кейс
+      </button>
+    </section>
+
+    <!-- Результат открытия -->
+    <section id="result" class="result hidden">
+      <h2>Выпало:</h2>
+      <div class="result-card">
+        <div id="resultIcon" class="result-icon">🎉</div>
+        <h3 id="resultName">Название подарка</h3>
+        <p id="resultRarity">Редкость</p>
+      </div>
+    </section>
+
+    <!-- Инвентарь -->
+    <section class="inventory-section">
+      <h2>Инвентарь</h2>
+
+      <div id="inventory" class="inventory">
+        <!-- Сюда будут добавляться выбитые подарки -->
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Подключаем логику приложения -->
+  <script src="app.js"></script>
+</body>
+</html>
